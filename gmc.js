@@ -38,7 +38,7 @@ var GM_config = {
  open: function() {
  if(document.evaluate("//iframe[@id='GM_config']",document,null,9,null).singleNodeValue) return;
 	// Create frame
-	document.body.appendChild((GM_config.frame=GM_config.create('iframe',{id:'GM_config', style:'position:fixed; top:0 !important; left:0 !important; opacity:0; display:none; z-index:999; width:309px; height:800px; border:1px solid #000000; overflow:auto;'})));
+	document.body.appendChild((GM_config.frame=GM_config.create('iframe',{id:'GM_config', style:'position:fixed; top:0 !important; left:0 !important; opacity:0; display:none; z-index:999; width:309px; height:700px; border:1px solid #000000; overflow:auto;'})));
         GM_config.frame.src = 'about:blank'; // In WebKit src cant be set until it is added to the page
 	GM_config.frame.addEventListener('load', function(){
 		var obj = GM_config, frameBody = this.contentDocument.getElementsByTagName('body')[0], create=obj.create, settings=obj.settings;
