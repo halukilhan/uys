@@ -426,9 +426,9 @@ GM_config.addTooltip = function(num,nam) {
 
 
             msg({
-                text : 'Welcome to "' + script_name + '".\n\n\n\n' +
+                text : 'Welcome to .\n\n\n\n' +
                     'There is an options button below the video.\n\n\n\n' +
                     'The options screen will automatically open when you close this message.',
-                title : '"' + script_name + '" Message',
-                onclose : function () { GM_config.open(); }
+                title : ' Message',
+//                onclose : function () { GM_config.open(); }
             });
