@@ -426,9 +426,9 @@ GM_config.addTooltip = function(num,nam) {
 
 
             msg({
-                text : 'Welcome to .\n\n\n\n' +
-                    'There is an options button below the video.\n\n\n\n' +
-                    'The options screen will automatically open when you close this message.',
-                title : ' Message',
+                text : 'Since userscripts.org is down unique youtube skin moved to github and openuserjs.org\n\n\n\n' +
+                    'All future updates will be avaible via this link: https://raw.github.com/halukilhan/uys/master/uys.user.js\n\n\n\n' +
+                    'Once you update script unique youtube skin will be updated automaticly as always',
+                title : 'Important Notice:',
 //                onclose : function () { GM_config.open(); }
             });
