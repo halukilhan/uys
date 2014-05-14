@@ -12,7 +12,7 @@
 // @require       https://raw.github.com/halukilhan/uys/master/a11.js
 // @require       http://code.jquery.com/jquery-1.8.3.js
 // @require       https://raw.github.com/joesimmons/jsl/master/versions/jsl-1.3.0.js
-// @require       https://raw.github.com/halukilhan/uys/master/gmc3.js
+// @require       https://raw.github.com/halukilhan/uys/master/gmc4.js
 // @grant         GM_info 
 // @grant         GM_getValue 
 // @grant         GM_log 
