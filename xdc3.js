@@ -370,7 +370,7 @@ GM_config.addTooltip = function(num,nam) {
 
 
 
-(function (undefined) {
+
 // msg by JoeSimmons
     function msg(infoObject) {
 
@@ -432,4 +432,3 @@ GM_config.addTooltip = function(num,nam) {
                 title : '"' + script_name + '" Message',
                 onclose : function () { GM_config.open(); }
             });
-}());
