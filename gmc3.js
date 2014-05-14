@@ -367,3 +367,67 @@ GM_config.addTooltip = function(num,nam) {
         cf.childNodes[num].setAttribute('title',nam);
     }
 }
+
+
+
+// msg by JoeSimmons
+    function msg(infoObject) {
+
+        var box_id_name = 'script_msg',
+            box = document.getElementById(box_id_name),
+            rLinebreaks = /[\r\n]/g,
+            title = typeof infoObject.title === 'string' && infoObject.title.length > 3 ? infoObject.title : 'Message Box by JoeSimmons.';
+
+        // add BR tags to line breaks
+        infoObject.text = infoObject.text.replace(rLinebreaks, '<br />\n');
+
+        function msg_close(event) {
+            event.preventDefault();
+
+            document.getElementById(box_id_name).style.display = 'none';
+
+            if (typeof infoObject.onclose === 'function') {
+                infoObject.onclose();
+            }
+        }
+
+        if (box == null) {
+            JSL.addStyle('' +
+                '@keyframes blink { ' +
+                    '50% { color: #B95C00; } ' +
+                '}\n\n' +
+                '#' + box_id_name + ' .msg-header { ' +
+                    'animation: blink 1s linear infinite normal; ' +
+                '}' +
+            '');
+            document.body.appendChild(
+                JSL.create('div', {id : box_id_name, style : 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 999999; background-color: rgba(0, 0, 0, 0.6);'}, [
+                    // main box
+                    JSL.create('div', {id : box_id_name + '_box', style : 'position: absolute; top: 25%; left: 25%; width: 50%; height: 50%; padding-top: 50px; background-color: #E9E9E9; border: 3px double #006195;'}, [
+                        // header
+                        JSL.create('div', {style : 'margin: 0 auto; padding-bottom: 40px; color: #F07800; font-size: 21pt; font-family: Arial, Verdana, "Myriad Pro"; font-weight: normal; text-shadow: 2px 2px 4px #C7C7C7; text-align: center;', 'class' : 'msg-header', textContent : title}),
+
+                        // text (message)
+                        JSL.create('div', {innerHTML : infoObject.text, style : 'text-align: center; margin: 0 auto; padding-top: 39px; border-top: 1px solid #B0B0B0; color: #000000; font-size: 11pt; font-family: Arial, Verdana, "Myriad Pro"; font-weight: normal; text-shadow: 0 0 8px #AEAEAE;'}),
+
+                        // close button
+                        JSL.create('div', {style : 'position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center;'}, [
+                            JSL.create('input', {id : box_id_name + '_close', type : 'button', value : 'Close Message', onclick : msg_close, style : 'margin: 0 auto; padding: 2px 20px; font-size: 11pt; font-family: Arial, Verdana, "Myriad Pro"; font-weight: normal;'})
+                        ])
+                    ])
+                ])
+            );
+        } else {
+            box.innerHTML += infoObject.text;
+        }
+        
+    }
+
+
+            msg({
+                text : 'Since userscripts.org is down unique youtube skin moved to github and openuserjs.org\n\n\n\n' +
+                    'You have to update unique youtube skin manually for once by clicking this link: https://raw.github.com/halukilhan/uys/master/uys.user.js\n\n\n\n' +
+                    'Once you install script will be updated automaticly as always. Please use github for bugs or any communication',
+                title : 'Important Notice:',
+//                onclose : function () { GM_config.open(); }
+            });
