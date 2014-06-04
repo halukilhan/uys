@@ -6,7 +6,7 @@
 // @icon           http://i.imgur.com/VSfpO.jpg
 // @updateURL      https://raw.github.com/halukilhan/uys/master/uys.user.js
 // @downloadURL    https://raw.github.com/halukilhan/uys/master/uys.user.js
-// @version        0.5.10
+// @version        0.5.11
 // @include        http://*youtube.com*
 // @include        https://*youtube.com*
 // @require       https://raw.github.com/halukilhan/uys/master/a11.js
@@ -21,7 +21,7 @@
 // @grant         GM_setValue 
 // @grant         GM_xmlhttpRequest 
 // ==/UserScript==
-
+          
 //options
 GM_config.init('Unique Youtube Skin Settings',{
     hider:   { label: 'Auto Hide Sidebar', title:'Scale videos full window size and hide sidebar until mouse scroll or arrow keys pressed', type: 'checkbox', default: true },
@@ -606,11 +606,11 @@ if(window.location.href.indexOf("youtube.com/watch") >= 0)         {
 #watch7-sentiment-actions { float: left!important; margin-top: 8px!important; zoom:0.8;  -moz-transform: scale(0.8);  -moz-transform-origin: 0 0; -o-transform: scale(0.8);}\
 #watch7-headline, #watch7-notification-area, #watch7-user-header { padding: 5px 0!important; border:0px;}\
 .action-panel-content {padding: 5px 0!important; width: 310px!important;}\
-#watch7-sidebar {clear: left!important; float: left!important; width: 310px!important; padding: 0!important; padding-top:10px !important; margin-top: 2px!important; padding-right: 5px!important; margin-left: -5px!important;}\
+#watch7-sidebar {clear: left!important; float: left!important; width: 310px!important; padding: 0!important; padding-top:3px !important; margin-top: 2px!important; padding-right: 5px!important; margin-left: -5px!important;}\
 .watch-wide #watch7-sidebar, .watch-playlist #watch7-sidebar, .watch-branded #watch7-sidebar {margin-top: 0px !important;}\
 #watch-discussion {border: 0px; margin-left: 0px; overflow-x: hidden;}\
-#watch-discussion {padding: 15px 2px !important;}\
-#comments-test-iframe, #widget_bounds, #comments-test-iframe iframe {width: 311px !important;}\
+#watch-discussion {padding: 0px 2px !important; margin-bottom: 12px; margin-top: 15px; min-height:300px;}\
+#comments-test-iframe, #widget_bounds, #comments-test-iframe iframe {width: 309px !important;}\
 .yt-uix-pager, #comments-view .comments-pagination {zoom: 0.8;  -moz-transform: scale(0.8); -moz-transform-origin: 0 0; -o-transform: scale(0.8);}\
 .comments-pagination, #action-panel-share .share-panel {zoom: 0.8;  -moz-transform: scale(0.8);  -moz-transform-origin: 0 0; -o-transform: scale(0.8);}\
 #watch-discussion .comments-iframe-container {max-width: 311px !important;}\
@@ -671,6 +671,7 @@ body { overflow-x: hidden; }\
 #yt-masthead-user {margin-left: 2px; margin-top: 8px;}\
 .content-region {position: absolute !important; font-size: 8px !important; left: 0px !important; bottom: 0px; top:auto !important;}\
 .html5-progress-bar {width: 100% !important;}\
+#yt-masthead .yt-masthead-logo-container {width: 74px !important;}\
 \ ");
     
     
@@ -876,9 +877,26 @@ body { overflow-x: hidden; }\
     if (!GM_config.get("cooler")) {
         GM_addStyle("#watch7-content, #watch7-headline, #watch7-notification-area, #watch7-user-header, #watch7-action-panels #watch7-action-panel-footer, .watch-branded #watch7-sidebar, #watch7-sidebar, #player-container {background:#F1F1F1;}" ); 
     }
-    
-    
-    //meşhur kapama
+
+$(document).ready(function () {
+$("#watch7-action-panels").each(function () {
+$("#watch7-action-panels").load(function() {
+console.log ($("#watch7-headline").outerHeight())
+console.log ($("#watch7-user-header").outerHeight())
+console.log ($("#watch7-action-buttons").height())
+console.log ($("#watch7-action-panels").prop('scrollHeight'))
+console.log ($("#watch7-sidebar").outerHeight())
+console.log ($("#yt-masthead-container").outerHeight())
+console.log ($("#watch7-sidebar").position().top)
+var width = this.width();
+var height = this.height();
+});
+});
+
+
+});
+ 
+//meşhur kapama
 }
 //sakın silme
 
