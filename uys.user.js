@@ -6,7 +6,7 @@
 // @icon           http://i.imgur.com/VSfpO.jpg
 // @updateURL      https://raw.github.com/halukilhan/uys/master/uys.user.js
 // @downloadURL    https://raw.github.com/halukilhan/uys/master/uys.user.js
-// @version        0.5.11
+// @version        0.5.12
 // @include        http://*youtube.com*
 // @include        https://*youtube.com*
 // @require       https://raw.github.com/halukilhan/uys/master/a11.js
@@ -596,7 +596,7 @@ if(window.location.href.indexOf("youtube.com/watch") >= 0)         {
 #watch7-main-container {padding-left: 0 !important; position: absolute; left: 0; top: 0; float: left; width: 311px; margin-top: 38px; display:none;}\
 .sidebar-expanded #player, #player-legacy, .site-left-aligned.guide-enabled #player-legacy { width: auto; height:100%;}\
 #watch7-container {padding-top: 0px; padding-left: 0px;}\
-#watch7-content {width: 311px; margin-top:0px !important; overflow-x:hidden;}\
+.appbar-flexwatch-mini .watch-non-stage-mode #watch7-content, #watch7-content {width: 311px; margin-top:0px !important; overflow-x:hidden;}\
 #watch7-main.clearfix { width: auto!important; left: 0px!important; min-width:0px!important;}\
 #page.watch {margin-left: 0px!important;}\
 #watch7-views-info { position: absolute!important; top: 62px; right: 22px; min-width: 160px!important; max-width: 160px!important; zoom: 0.9!important; -moz-transform: scale(0.96); -moz-transform-origin: 800px 0 0; -o-transform: scale(0.96);}\
@@ -672,6 +672,8 @@ body { overflow-x: hidden; }\
 .content-region {position: absolute !important; font-size: 8px !important; left: 0px !important; bottom: 0px; top:auto !important;}\
 .html5-progress-bar {width: 100% !important;}\
 #yt-masthead .yt-masthead-logo-container {width: 74px !important;}\
+.appbar-flexwatch-mini .watch-non-stage-mode.watch #content.content-alignment, .appbar-flexwatch-mini .watch-non-stage-mode #player.watch-small {max-width:none !important;}\
+.appbar-flexwatch-mini .watch-non-stage-mode #watch7-sidebar { top: 0px;}\
 \ ");
     
     
