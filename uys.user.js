@@ -6,7 +6,7 @@
 // @icon           http://i.imgur.com/VSfpO.jpg
 // @updateURL      https://raw.github.com/halukilhan/uys/master/uys.user.js
 // @downloadURL    https://raw.github.com/halukilhan/uys/master/uys.user.js
-// @version        0.5.12
+// @version        0.5.13
 // @include        http://*youtube.com*
 // @include        https://*youtube.com*
 // @require       https://raw.github.com/halukilhan/uys/master/a11.js
@@ -20,6 +20,9 @@
 // @grant         GM_registerMenuCommand 
 // @grant         GM_setValue 
 // @grant         GM_xmlhttpRequest 
+// @grant         GM_addStyle 
+// @grant         GM_getResourceText 
+// @grant         GM_getResourceURL 
 // ==/UserScript==
           
 //options
@@ -499,7 +502,7 @@ if (GM_config.get("flash")) {
 
 
 // No Share Tab
-unsafeWindow.yt.setConfig({'SHARE_ON_VIDEO_END': false}); 
+//unsafeWindow.yt.setConfig({'SHARE_ON_VIDEO_END': false}); 
 
 
 
@@ -596,7 +599,7 @@ if(window.location.href.indexOf("youtube.com/watch") >= 0)         {
 #watch7-main-container {padding-left: 0 !important; position: absolute; left: 0; top: 0; float: left; width: 311px; margin-top: 38px; display:none;}\
 .sidebar-expanded #player, #player-legacy, .site-left-aligned.guide-enabled #player-legacy { width: auto; height:100%;}\
 #watch7-container {padding-top: 0px; padding-left: 0px;}\
-.appbar-flexwatch-mini .watch-non-stage-mode #watch7-content, #watch7-content {width: 311px; margin-top:0px !important; overflow-x:hidden;}\
+.appbar-flexwatch-mini .watch-non-stage-mode #watch7-content, #watch7-content, .watch-non-stage-mode #watch7-content {width: 311px !important; margin-top:0px !important; overflow-x:hidden !important;}\
 #watch7-main.clearfix { width: auto!important; left: 0px!important; min-width:0px!important;}\
 #page.watch {margin-left: 0px!important;}\
 #watch7-views-info { position: absolute!important; top: 62px; right: 22px; min-width: 160px!important; max-width: 160px!important; zoom: 0.9!important; -moz-transform: scale(0.96); -moz-transform-origin: 800px 0 0; -o-transform: scale(0.96);}\
@@ -608,7 +611,7 @@ if(window.location.href.indexOf("youtube.com/watch") >= 0)         {
 .action-panel-content {padding: 5px 0!important; width: 310px!important;}\
 #watch7-sidebar {clear: left!important; float: left!important; width: 310px!important; padding: 0!important; padding-top:3px !important; margin-top: 2px!important; padding-right: 5px!important; margin-left: -5px!important;}\
 .watch-wide #watch7-sidebar, .watch-playlist #watch7-sidebar, .watch-branded #watch7-sidebar {margin-top: 0px !important;}\
-#watch-discussion {border: 0px; margin-left: 0px; overflow-x: hidden;}\
+#watch-discussion {border: 0px; margin-left: 0px; overflow-x: hidden !important;}\
 #watch-discussion {padding: 0px 2px !important; margin-bottom: 12px; margin-top: 15px; min-height:300px;}\
 #comments-test-iframe, #widget_bounds, #comments-test-iframe iframe {width: 309px !important;}\
 .yt-uix-pager, #comments-view .comments-pagination {zoom: 0.8;  -moz-transform: scale(0.8); -moz-transform-origin: 0 0; -o-transform: scale(0.8);}\
@@ -622,7 +625,7 @@ if(window.location.href.indexOf("youtube.com/watch") >= 0)         {
 #watch-description-expand, #watch-description-collapse {zoom:0.8;  -moz-transform: scale(0.8); -moz-transform-origin: 0 0; -o-transform: scale(0.8);}\
 #watch7-headline.yt-uix-expander-collapsed h1 {white-space: normal;}\
 #watch7-headline h1 {font-size: 15px;}\
-#watch-description-clip {width: 300px;}\
+.not-watch8 #watch-description-clip, #watch-description-clip {width: 300px;}\
 #watch7-secondary-actions {float: left; margin-top: 22px; zoom: 0.9;  -moz-transform: scale(0.9); -moz-transform-origin: 0 0;  -o-transform: scale(0.9);}\
 #watch7-action-panels {border: 0px;  border-bottom: 1px solid #292929;}\
 .yt-uix-button-panel {margin-left: 2px;}\
@@ -673,7 +676,10 @@ body { overflow-x: hidden; }\
 .html5-progress-bar {width: 100% !important;}\
 #yt-masthead .yt-masthead-logo-container {width: 74px !important;}\
 .appbar-flexwatch-mini .watch-non-stage-mode.watch #content.content-alignment, .appbar-flexwatch-mini .watch-non-stage-mode #player.watch-small {max-width:none !important;}\
-.appbar-flexwatch-mini .watch-non-stage-mode #watch7-sidebar { top: 0px;}\
+.appbar-flexwatch-mini .watch-non-stage-mode #watch7-sidebar, .watch-non-stage-mode #watch7-sidebar, #watch7-sidebar  { top: 0px !important;}\
+#watch7-content {border-bottom: 0px !important;}\
+#watch7-action-panels .yt-uix-expander-head {display:none;}\
+#watch-discussion {opacity:0.7!important;}\
 \ ");
     
     
@@ -971,6 +977,7 @@ function imgZIndex(evt) {
         img.style.zIndex = null;
     }	
 }
+
 
 
 
