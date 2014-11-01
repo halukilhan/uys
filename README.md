@@ -1,3 +1,14 @@
+IMPORTANT NOTE:
+Every youtube change (which happens 2-3 times a month) brakes script. Maintaining script takes very long time. New version of unique youtube skin is simplified to keep updated. No settings avaible now. Some features will/may return back.
+- Features deprecated:
+- Settings or optional features. (not returning)
+- Flash player features like auto hd, autopause, dash etc.. (not returning) use "yays"
+- Keyboard and mouse actions. (may return)
+- Cool Black mode. (may return upon request)
+- Hiding sidebar. (will return)
+- Other features may return upon request
+
+
 ![](http://i.imgur.com/Fr3eZE1.png) 
 - you want to watch a video and go to youtube. %80 of page filled anything but video. 
 - you just want to see video 
