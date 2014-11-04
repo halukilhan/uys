@@ -6,7 +6,7 @@ Every youtube change (which happens 2-3 times a month) brakes script. Maintainin
 - Flash player features like auto hd, autopause, dash etc.. (not returning) use "yays" instead
 - Keyboard actions. (not returning)
 - Settings or optional features. (not returning)
-- Reverse sidebar mode (not returning)
+- Reverse sidebar mode (may return)
 - Other old features may return upon request
 
 
