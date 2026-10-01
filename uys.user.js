@@ -8,7 +8,7 @@
 // @require		  http://code.jquery.com/jquery-2.1.1.min.js
 // @require       https://raw.github.com/halukilhan/uys/master/b.js
 // @icon          http://i.imgur.com/VSfpO.jpg
-// @version       0.5.23
+// @version       0.5.24
 // @include       http://*youtube.com*
 // @include       https://*youtube.com*
 // @grant         GM_info 
